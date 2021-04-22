@@ -1499,17 +1499,16 @@
             // set with an string to default value, "John Doe" by example
 
             localDisplayName = document.getElementById("namechange-field-start-dialog").value;
-            console.log("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!" + localDisplayName);
 
             var domain = "meet.jit.si";
             var options = {
                 roomName: '{{.LobbyID}}',
                 width: drawingBoard.clientWidth + 460,
                 height: 150,
-                allow: "microphone; camera",
+                allow: "microphone;",
                 parentNode: document.getElementById("jitsi"),
-                configOverwrite: { prejoinPageEnabled: false },
-                interfaceConfigOverwrite: { TILE_VIEW_MAX_COLUMNS: 2, SHOW_CHROME_EXTENSION_BANNER: false }
+                configOverwrite: { prejoinPageEnabled: false, startAudioOnly: true },
+                interfaceConfigOverwrite: { TILE_VIEW_MAX_COLUMNS: 6, SHOW_CHROME_EXTENSION_BANNER: false }
             }
             var api = new JitsiMeetExternalAPI(domain, options);
             api.executeCommand('toggleTileView');
