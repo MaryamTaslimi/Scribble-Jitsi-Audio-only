@@ -1505,15 +1505,14 @@
                 roomName: '{{.LobbyID}}',
                 width: drawingBoard.clientWidth + 460,
                 height: 150,
-                allow: "microphone;",
+                allow: "microphone; camera",
                 parentNode: document.getElementById("jitsi"),
-                configOverwrite: { prejoinPageEnabled: false },
+                configOverwrite: {
+                    prejoinPageEnabled: false
+                },
                 interfaceConfigOverwrite: {
-                    TILE_VIEW_MAX_COLUMNS: 6,
-                    SHOW_CHROME_EXTENSION_BANNER: false,
-                    TOOLBAR_ALWAYS_VISIBLE: false,
-                    TOOLBAR_BUTTONS: ['microphone'],
-                    HIDE_INVITE_MORE_HEADER : true
+                    TILE_VIEW_MAX_COLUMNS: 2,
+                    SHOW_CHROME_EXTENSION_BANNER: false
                 }
             }
             var api = new JitsiMeetExternalAPI(domain, options);
